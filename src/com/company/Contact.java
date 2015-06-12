@@ -14,7 +14,7 @@ public class Contact {
         this.age = age;
     }
 
-    public void  toString(Contact c){
-        System.out.println("Name: "+c.name+" Phone: " + c.phone + " age: " + c.age);
+     public String  toString(Contact c){
+       return "Name: "+c.name+" Phone: " + c.phone + " age: " + c.age;
     }
 }
