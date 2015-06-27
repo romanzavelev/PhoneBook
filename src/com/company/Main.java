@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Contact> al = new ArrayList<Contact>();
+        ArrayListNew al = new ArrayListNew();
         Contact curCont;
 
         while (true) {
@@ -38,84 +38,80 @@ public class Main {
                 int age = scanner.nextInt();
                 Contact ct = new Contact(name, phone, age);
                 al.add(ct);
+                al.sort();
             } else if (in == 2) {
                 System.out.println("Input name:");
                 String name = scanner.next();
-                for (Contact ncal : al) {
-                    if (ncal.name.equals(name)) {
-                        al.remove(ncal);
-                        break;
-                    }
-                }
+                al.remove(name);
             } else if (in == 3) {
-                for (Contact ct : al) {
-                    System.out.println(ct.name + " " + ct.phone);
+                for (int i = 0; i < al.size(); i++) {
+                    System.out.println(al.get(i).name + " " + al.get(i).phone);
                 }
             } else if (in == 4) {
-                boolean find = false;
-               // Contact curCont;
-                String curName;
-                while (true) {
-                    System.out.println("Input name edit contact:");
-                    curName = scanner.next();
-
-                    for (Contact ncal : al) {
-
-                        if (ncal.name.equals(curName)) {
-                            find = true;
-                            curCont = ncal;
-                            break;
-                        }
-                    }
-                    if (find) {
-                        break;
-                    } else {
-                        System.out.println("Контакт не найден:");
-                        System.out.println(" 1 - Еще раз\n" +
-                                           " 2 - Отменить\n");
-                        in = scanner.nextInt();
-                        if (in == 2) {
-                            break;
-                        }
-                    }
-                }
-                if (find) {
-                    while (true) {
-                        System.out.println(" 1 - Edit name\n" +
-                                " 2 - Edit phone\n" +
-                                " 3 - Edit age\n" +
-                                " 4 - Edit contacts\n" +
-                                " 5 - Enter\n" +
-                                " 6 - Quit");
-                        in = scanner.nextInt();
-                        if (in == 1) {
-                            System.out.println("Input new name contact:");
-                            String newName = scanner.next();
-                            for (Contact ncal : al) {
-
-                                if (ncal.name.equals(curName)) {
-                                    ncal.name = newName;
-                                    break;
-                                }
-                                break;
-                            }
-                        } else if (in == 2) {
-                            System.out.println("Input new name phone:");
-                            String newphone = scanner.next();
-                            for (Contact ncal : al) {
-
-                                if (ncal.name.equals(curName)) {
-                                    ncal.phone = newphone;
-                                    break;
-                                }
-                                break;
-                            }
-                        }else if (in == 6) {
-                            break;
-                        }
-
-                    }
-                }
+//                boolean find = false;
+//               // Contact curCont;
+//                String curName;
+//                while (true) {
+//                    System.out.println("Input name edit contact:");
+//                    curName = scanner.next();
+//
+//                    for (Contact ncal : al) {
+//
+//                        if (ncal.name.equals(curName)) {
+//                            find = true;
+//                            curCont = ncal;
+//                            break;
+//                        }
+//                    }
+//                    if (find) {
+//                        break;
+//                    } else {
+//                        System.out.println("Контакт не найден:");
+//                        System.out.println(" 1 - Еще раз\n" +
+//                                           " 2 - Отменить\n");
+//                        in = scanner.nextInt();
+//                        if (in == 2) {
+//                            break;
+//                        }
+//                    }
+//                }
+//                if (find) {
+//                    while (true) {
+//                        System.out.println(" 1 - Edit name\n" +
+//                                " 2 - Edit phone\n" +
+//                                " 3 - Edit age\n" +
+//                                " 4 - Edit contacts\n" +
+//                                " 5 - Enter\n" +
+//                                " 6 - Quit");
+//                        in = scanner.nextInt();
+//                        if (in == 1) {
+//                            System.out.println("Input new name contact:");
+//                            String newName = scanner.next();
+//                            for (Contact ncal : al) {
+//
+//                                if (ncal.name.equals(curName)) {
+//                                    ncal.name = newName;
+//                                    break;
+//                                }
+//                                break;
+//                            }
+//                        } else if (in == 2) {
+//                            System.out.println("Input new name phone:");
+//                            String newphone = scanner.next();
+//                            for (Contact ncal : al) {
+//
+//                                if (ncal.name.equals(curName)) {
+//                                    ncal.phone = newphone;
+//                                    break;
+//                                }
+//                                break;
+//                            }
+//                        }else if (in == 6) {
+//                            break;
+//                        }
+//
+//                    }
+//                }
             } else if (in == 5) {
                 break;
             } else {

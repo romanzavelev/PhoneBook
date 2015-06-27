@@ -1,8 +1,5 @@
 package com.company;
 
-/**
- * Created by admin on 04.06.2015.
- */
 public class Contact {
     public String name;
     String phone;
@@ -14,7 +11,7 @@ public class Contact {
         this.age = age;
     }
 
-     public String  toString(Contact c){
+    public String  toString(Contact c){
        return "Name: "+c.name+" Phone: " + c.phone + " age: " + c.age;
     }
 }
