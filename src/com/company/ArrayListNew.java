@@ -62,6 +62,7 @@ public void sort(){
     alexandr
     alexey
      */
+    //f4
     String name1 = "abc";
     String name2 = "bcd";
     char[] arr1 = name1.toCharArray(); // строка в массив символов
